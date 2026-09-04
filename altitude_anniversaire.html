@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALTITUDE — Week-end d'anniversaire</title>
+<style>
+:root{--bg:#f5f2ec;--ink:#17201e;--muted:#68716e;--card:#fffdf9;--accent:#d66b43;--accent2:#315c55;--line:#ddd8ce;--shadow:0 20px 50px #18201d18}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+button{font:inherit}.wrap{max-width:1120px;margin:auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:#f5f2ecee;backdrop-filter:blur(14px);border-bottom:1px solid #ddd8ce99}
+.navin{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-weight:900;letter-spacing:.12em}.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks button{border:0;background:transparent;color:var(--muted);padding:9px 12px;border-radius:999px;cursor:pointer}.navlinks button.active,.navlinks button:hover{background:#fff;color:var(--ink)}
+.page{display:none;min-height:calc(100vh - 70px)}.page.active{display:block}
+.hero{padding:70px 0 50px;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+h1{font-size:clamp(3.2rem,8vw,7rem);line-height:.9;letter-spacing:-.065em;margin:12px 0 25px}h2{font-size:clamp(2rem,4vw,3.5rem);line-height:1;margin:10px 0 20px;letter-spacing:-.04em}h3{margin:0 0 8px}.lead{font-size:1.18rem;color:var(--muted);max-width:650px}
+.heroart{min-height:420px;border-radius:34px;background:linear-gradient(145deg,#315c55,#172e2a);position:relative;overflow:hidden;box-shadow:var(--shadow);color:white;padding:28px;display:flex;align-items:flex-end}
+.mountain{position:absolute;inset:auto -10% -5% -10%;height:65%;background:#edf0e9;clip-path:polygon(0 100%,24% 30%,39% 62%,55% 8%,73% 60%,88% 25%,100% 100%)}.sun{position:absolute;right:18%;top:16%;width:100px;height:100px;border-radius:50%;background:#e7b873}.heroquote{position:relative;z-index:1}.heroquote strong{font-size:2rem;display:block}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:0 10px 30px #18201d08}.section{padding:45px 0}.pill{display:inline-block;background:#e9eee9;color:var(--accent2);padding:5px 10px;border-radius:999px;font-size:.78rem;font-weight:800}
+.meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.9rem;margin:15px 0}.timeline{display:grid;gap:12px}.event{display:grid;grid-template-columns:95px 1fr;gap:18px;align-items:start;padding:20px 0;border-bottom:1px solid var(--line)}.time{font-weight:900;color:var(--accent)}
+.btn{border:0;background:var(--ink);color:white;padding:13px 18px;border-radius:999px;cursor:pointer;font-weight:800}.btn.alt{background:var(--accent)}.btn.light{background:white;color:var(--ink);border:1px solid var(--line)}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:28px 0}.count div{background:#ffffff1a;border:1px solid #ffffff24;border-radius:18px;padding:16px;text-align:center}.count b{display:block;font-size:2rem;line-height:1}.count span{font-size:.72rem;text-transform:uppercase;opacity:.7}
+details{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:17px 20px}details+details{margin-top:10px}summary{cursor:pointer;font-weight:800}
+form{display:grid;gap:13px}input,select,textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;font:inherit}textarea{min-height:100px}.notice{padding:14px 16px;background:#eef3ef;border-radius:15px;color:#315c55}.hidden{display:none}.map{height:280px;border-radius:24px;background:linear-gradient(135deg,#dce5dd,#b8c9bd);display:grid;place-items:center;color:#315c55;font-weight:900;position:relative;overflow:hidden}.map:before{content:"";position:absolute;width:140%;height:2px;background:#fff;transform:rotate(-22deg);box-shadow:0 45px #fff,0 -50px #fff}.pin{position:relative;background:var(--accent);color:#fff;padding:12px 17px;border-radius:999px;z-index:1}
+footer{padding:50px 0;color:var(--muted);font-size:.85rem}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.grid,.grid2{grid-template-columns:1fr}.heroart{min-height:330px}.navin{height:auto;padding:12px 0;align-items:flex-start}.navlinks{justify-content:flex-end}.count b{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<nav><div class="wrap navin"><div class="logo">ALTITUDE / 30</div><div class="navlinks">
+<button data-page="home" class="active">Accueil</button><button data-page="programme">Programme</button><button data-page="lieu">Le lieu</button><button data-page="pratique">Pratique</button><button data-page="rsvp">RSVP</button>
+</div></div></nav>
+
+<main>
+<section id="home" class="page active"><div class="wrap">
+<div class="hero"><div>
+<div class="eyebrow">14 → 16 février 2027 · Vosges</div>
+<h1>Un week-end<br>à la montagne.</h1>
+<p class="lead">Trois jours pour fêter un anniversaire, prendre l’air, bien manger et surtout être ensemble. Pas de dress code compliqué. Pas de planning militaire. Juste un très bon week-end.</p>
+<div class="meta"><span class="pill">🎿 Neige possible</span><span class="pill">🧀 Raclette obligatoire</span><span class="pill">🥂 Bonne humeur</span></div>
+<button class="btn alt" onclick="go('programme')">Découvrir le programme →</button>
+</div>
+<div class="heroart"><div class="sun"></div><div class="mountain"></div><div class="heroquote"><strong>CHALET<br>DES SAPINS</strong><span>La Bresse · 880 m</span></div></div></div>
+
+<div class="card" style="background:#17201e;color:white;border:0">
+<div class="eyebrow" style="color:#e7b873">J-<span id="days">—</span></div><h2>Le compte à rebours<br>est lancé.</h2>
+<div class="count"><div><b id="d">—</b><span>jours</span></div><div><b id="h">—</b><span>heures</span></div><div><b id="m">—</b><span>minutes</span></div><div><b id="s">—</b><span>secondes</span></div></div>
+</div>
+</div></section>
+
+<section id="programme" class="page"><div class="wrap section">
+<div class="eyebrow">Le plan</div><h2>Un programme<br>sans pression.</h2><p class="lead">Tout est prévu. Rien n'est obligatoire. Tu viens avec des chaussures confortables et l'envie de profiter.</p>
+<div class="timeline">
+<div class="event"><div class="time">VEN · 18:00</div><div><h3>Arrivée & apéro</h3><p>Installation dans les chambres, verre de bienvenue et playlist collaborative. Les retardataires auront le droit à une deuxième tournée.</p></div></div>
+<div class="event"><div class="time">VEN · 20:30</div><div><h3>Grande raclette</h3><p>Pommes de terre, fromage, charcuterie, options végétariennes et dessert surprise.</p></div></div>
+<div class="event"><div class="time">SAM · 10:30</div><div><h3>Randonnée panoramique</h3><p>Boucle facile d'environ 7 km. Départ depuis le chalet. Prévoir chaussures adaptées et une gourde.</p></div></div>
+<div class="event"><div class="time">SAM · 15:00</div><div><h3>Après-ski libre</h3><p>Jeux, sauna, sieste, balade ou rien du tout. Un chocolat chaud est fortement recommandé.</p></div></div>
+<div class="event"><div class="time">SAM · 20:00</div><div><h3>Dîner anniversaire</h3><p>Apéritif au coin du feu, dîner convivial, gâteau, discours potentiellement embarrassants et soirée dansante.</p></div></div>
+<div class="event"><div class="time">DIM · 10:30</div><div><h3>Brunch & départs</h3><p>Brunch XXL, photo de groupe et départ tranquille vers 14:00.</p></div></div>
+</div></div></section>
+
+<section id="lieu" class="page"><div class="wrap section">
+<div class="eyebrow">Le refuge</div><h2>Chalet des Sapins.</h2><div class="grid2">
+<div><p class="lead">Un grand chalet contemporain posé au-dessus de La Bresse, avec une vue dégagée sur les crêtes.</p>
+<div class="card"><h3>Ce qu'on y trouve</h3><p>🔥 Cheminée · 🧖 Sauna · 🛏 5 chambres · 🍳 Grande cuisine · 🪵 Terrasse · 📶 Wi-Fi · 🚗 Parking</p></div></div>
+<div class="map"><div class="pin">📍 La Bresse, Vosges</div></div>
+</div>
+<div class="section"><div class="grid"><div class="card"><span class="pill">Dormir</span><h3>5 chambres</h3><p>16 couchages répartis entre chambres doubles et lits individuels. Les attributions seront envoyées avant le départ.</p></div><div class="card"><span class="pill">Manger</span><h3>Tout sur place</h3><p>Les repas principaux sont organisés. Signale simplement tes allergies ou contraintes alimentaires dans le RSVP.</p></div><div class="card"><span class="pill">Venir</span><h3>Voiture recommandée</h3><p>Le chalet est à environ 4 h 30 de Paris. Une organisation de covoiturage sera proposée.</p></div></div></div>
+</div></section>
+
+<section id="pratique" class="page"><div class="wrap section">
+<div class="eyebrow">À savoir</div><h2>Les petits détails<br>qui évitent les questions.</h2>
+<div class="grid2"><div><details><summary>Que dois-je apporter ?</summary><p>Des vêtements chauds, des chaussures de marche, un maillot de bain pour le sauna, une tenue sympa pour samedi soir et ton nécessaire de toilette.</p></details><details><summary>Quel est le dress code ?</summary><p>Vendredi : confortable. Samedi soir : « chalet chic ». Traduction : fais un effort, mais pas au point d'avoir froid.</p></details><details><summary>Et si je ne fais pas la randonnée ?</summary><p>Aucun problème. Le chalet sera ouvert et plusieurs activités tranquilles seront prévues.</p></details></div>
+<div><details><summary>Combien ça coûte ?</summary><p>Le week-end est prévu sur une base de 145 € par personne, comprenant hébergement et repas. Le transport est à organiser séparément.</p></details><details><summary>Comment venir ?</summary><p>Une liste de covoiturage sera constituée après les RSVP. En train, la gare d'Épinal est la plus pratique, puis environ 45 min de voiture.</p></details><details><summary>Je peux venir avec quelqu'un ?</summary><p>Oui, mais indique-le dans le RSVP afin qu'on puisse gérer les couchages et les quantités.</p></details></div></div>
+</div></section>
+
+<section id="rsvp" class="page"><div class="wrap section">
+<div class="eyebrow">À toi</div><h2>Tu viens ?</h2><p class="lead">Ce formulaire est une démo locale : rien n'est envoyé sur Internet. Il sert à simuler l'expérience du site.</p>
+<div class="grid2"><div class="card"><form id="form"><label>Prénom<br><input required placeholder="Camille"></label><label>Je serai là…<br><select required><option value="">Choisir</option><option>Tout le week-end</option><option>Vendredi + samedi</option><option>Samedi uniquement</option><option>Malheureusement non 😢</option></select></label><label>Régime / allergies<br><input placeholder="Aucune / végétarien / ..."></label><label>Un mot pour l'organisateur<br><textarea placeholder="Une demande, une blague, une chanson…"></textarea></label><button class="btn alt" type="submit">Valider ma réponse</button></form><div id="thanks" class="notice hidden">✨ C'est noté ! Ta réponse a bien été enregistrée… dans cette démo.</div></div>
+<div class="card"><h3>À retenir</h3><p><b>📅 14–16 février 2027</b><br>Arrivée vendredi dès 18h<br>Départ dimanche vers 14h</p><p><b>📍 Chalet des Sapins</b><br>La Bresse, Vosges</p><p><b>🎒 À prendre</b><br>Chaussures de marche · vêtements chauds · maillot de bain · tenue « chalet chic »</p></div></div>
+</div></section>
+</main>
+<footer><div class="wrap">ALTITUDE / 30 · Un week-end fictif, imaginé pour la démo · <span id="year"></span></div></footer>
+<script>
+const pages=[...document.querySelectorAll('.page')], buttons=[...document.querySelectorAll('[data-page]')];
+function go(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));buttons.forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'});}
+buttons.forEach(b=>b.onclick=()=>go(b.dataset.page));
+const target=new Date('2027-02-14T18:00:00+01:00');
+function tick(){let x=Math.max(0,target-new Date()),sec=Math.floor(x/1000);let d=Math.floor(sec/86400);sec%=86400;let h=Math.floor(sec/3600);sec%=3600;let m=Math.floor(sec/60);sec%=60;document.getElementById('d').textContent=d;document.getElementById('h').textContent=String(h).padStart(2,'0');document.getElementById('m').textContent=String(m).padStart(2,'0');document.getElementById('s').textContent=String(sec).padStart(2,'0');document.getElementById('days').textContent=d}
+tick();setInterval(tick,1000);document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();e.target.classList.add('hidden');document.getElementById('thanks').classList.remove('hidden')});
+</script>
+</body>
+</html>
